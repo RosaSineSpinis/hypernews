@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<h2>Hyper news</h2>
+
+<!--<ul>-->
+<!--  {% for dict in dicts %}-->
+<!--  <li>-->
+
+<!--&lt;!&ndash;    <a href="/{{ forloop.counter }}">{{dict.title}} {{dict.link}} {{ forloop.counter }}</a>&ndash;&gt;-->
+<!--    <a href="{{ dict.link }}">{{dict.title}} {{dict.link}} </a>-->
+
+<!--  </li>-->
+<!--  {% endfor %}-->
+<!--</ul>-->
+
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--{{ data_sort }}-->
+{% for bunch in data_sort %}
+<h4 class="box_list">{{ bunch.date }}</h4>
+
+<ul>
+    {% for entries in bunch.lis %}
+    <li class="box_list">
+       <a href="/news/{{ entries.link }}/">{{ entries.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endfor %}
+
+<br>
+
+<a href="/news/create/">Create a new news</a>
+<br>
+<br>
+<form action="/news/" method="GET">
+    <label>Search<br><input type="search" name="q"></label>
+    <button type="submit" value="find">Find</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    body is working
+    <ul>
+        {% for dict in dicts %}
+        <li>
+    <!--    <a href="/{{ forloop.counter }}">{{dict.title}} {{dict.link}} {{ forloop.counter }}</a>-->
+        <a href="/{{ dict.link }}">{{dict.title}} {{dict.link}} </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <h2> Shining </h2>
+    <ul>
+        {% for chapter in book %}
+    <li>
+        <a href="/chapter/{{ link }}">news {{ forloop.counter }}</a>
+    </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

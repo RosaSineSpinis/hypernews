@@ -1,0 +1,15 @@
+body {
+    background: #cacff6;
+    color: black;
+}
+
+.box_list{
+    background: #fff;
+    right: 20px;
+    width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 40px;
+}
